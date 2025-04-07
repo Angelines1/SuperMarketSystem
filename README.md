@@ -4,11 +4,12 @@ A School Homework
 下面讲解整个结构
 
 Problem 1:
-    item 一个类，类中有一个构造函数 里面的信息有：编号 名称 生产日期 保质期（天） 价格 数量
+
+    item ：一个类，类中有一个构造函数 里面的信息有：编号 名称 生产日期 保质期（天） 价格 数量
 
 Problem 2:
 
-    Link_list 一个类（跟结构体有类似的地方），它是一个链表，用来临时存储数据；
+    Link_list ：一个类（跟结构体有类似的地方），它是一个链表，用来临时存储数据；
     创造一个链表：
     代码示例： Link_list mylist;  注：一个链表刚实例化出来时是空！就是里面没有内容
     该类中有以下函数：
@@ -49,7 +50,7 @@ Problem 2:
 
 
 Problem 3:
-    file_set 一个进行文件操作的类。
+    file_set ：一个进行文件操作的类。
 
     	void fset(Link_list* list,string filename);
 		void fget(Link_list* list,string filename);
