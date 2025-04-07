@@ -2,7 +2,8 @@
 #include<string>
 #include<sstream>
 #include<fstream>
-#include<filesystem>
+#include<cstdio>
+#include<cstdlib>
 using namespace std;
 
 	//类的声明
@@ -11,8 +12,6 @@ using namespace std;
 	public:
 		item() {};
 		item(string NO, string name, string fday, double daylong, double money, double number);
-
-	public:
 		string NO;
 		string name;
 		string f_day;
@@ -25,7 +24,6 @@ using namespace std;
 		void item_updata_daylong(double newdaylong);
 		void item_updata_money(double newmoney);
 		void item_updata_number(double newnumber);
-
 	};
 	class Link_part
 	{
@@ -42,8 +40,6 @@ using namespace std;
 		~Link_list();
 		Link_part* head;
 		int Long;	//长度
-
-	public:
 		void Link_add(item it);
 		void Link_delete(string NO);
 		void Link_updata(item it);
@@ -53,12 +49,11 @@ using namespace std;
 	class file_set
 	{
 	public:
-		void fset(Link_list* list);
-		Link_list* fget(Link_list* list,string filename);
+		void fset(Link_list* list,string filename);
+		void fget(Link_list* list,string filename);
 	};
 	class Windows_set
 	{
-	public:
 
 	};
 
@@ -208,18 +203,19 @@ using namespace std;
 	{
 
 	}
-	void file_set::fset(Link_list* list)
+	void file_set::fset(Link_list* list,string filename)
 	{
-		_FILESYSTEM_::remove("data.txt");
+		if(remove(filename.c_str()) !=0)
+		{
+			cout<<"文件不存在,已建立新文件"<<endl;
+		}
 		fstream fs;
-		//
+		fs.open(filename, ios::out);
 		if (!fs.is_open()) 
 		{
 			cerr << "无法打开文件！" << endl;
 			return;
 		}
-		//
-		fs.open("data.txt", ios::out);
 		Link_part* current = list->head;
 		while (current != NULL) 
 		{
@@ -233,7 +229,7 @@ using namespace std;
 		}
 		fs.close();
 	}
-	Link_list* file_set::fget(Link_list* list,string filename)
+	void file_set::fget(Link_list* list,string filename)
 	{	
 		//
 		if (list->head != NULL)
@@ -243,14 +239,13 @@ using namespace std;
 		//
 		else
 		{	
-			cout<<"打开";
 			fstream fs;
+			fs.open(filename, ios::in);
 			if (!fs.is_open()) 
 			{
 				cerr << "无法打开文件！" << endl;
 				return;
 			}
-			fs.open(filename, ios::in);
 			string information;
 			while (getline(fs, information))
 			{
@@ -264,6 +259,8 @@ using namespace std;
 		}		
 	}
 
+
+
 int main()
 {
 	Link_list list;
@@ -274,7 +271,7 @@ int main()
 	list.Link_add(item("444", "44", "4", 4, 4, 4));
 	file_set fs;
 	list.Link_delete("333");
-	fs.fset(&list);
+	fs.fset(&list, "twwt.txt");
 	fs.fget(&list2, "data.txt");
 	list2.Link_show();
 }
