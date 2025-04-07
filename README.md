@@ -1,5 +1,6 @@
 # SuperMarketSystem
 A School Homework
+
 目前数据是有两种存在的方式，第一种是缓存，关闭程序后会刷新，第二种是文件，关闭程序后不会刷新；
 下面讲解整个结构
 
