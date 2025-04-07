@@ -2,15 +2,15 @@
 A School Homework
 目前数据是有两种存在的方式，第一种是缓存，关闭程序后会刷新，第二种是文件，关闭程序后不会刷新；
 下面讲解整个结构
+
 Problem 1:
     item 一个类，类中有一个构造函数 里面的信息有：编号 名称 生产日期 保质期（天） 价格 数量
 
-
 Problem 2:
+
     Link_list 一个类（跟结构体有类似的地方），它是一个链表，用来临时存储数据；
     创造一个链表：
     代码示例： Link_list mylist;  注：一个链表刚实例化出来时是空！就是里面没有内容
-
     该类中有以下函数：
      	void Link_add(item it);
 		void Link_delete(string NO);
