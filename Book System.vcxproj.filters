@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Systeam">
+      <UniqueIdentifier>{1095e086-a2e6-448f-b1d8-9e5a39ff957b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{71534f5f-203e-4ab3-9561-307c5ba5a4b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{f6a1793f-90c0-4ba5-86a2-a5414a855559}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Systeam</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui-master\imgui-master\imgui.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui-master\imgui-master\imgui_demo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui-master\imgui-master\imgui_draw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui-master\imgui-master\imgui_tables.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui-master\imgui-master\imgui_widgets.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui-master\imgui-master\backends\imgui_impl_sdl2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui-master\imgui-master\backends\imgui_impl_sdlrenderer2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="item.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
